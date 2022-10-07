@@ -29,7 +29,7 @@ class Deck {
     }
   } //end Constructor
 
-  void printCards() {
+  void printDeck() {
     for (Card card in _cards) {
       print(card.getCard());
     }
@@ -39,7 +39,14 @@ class Deck {
     this._cards.shuffle();
   }
 
+  //Sir, forgive me for using Iterable instead of List. Dart extention is forcing me to use it since where() returns an Iterable.
   Iterable<Card> cardsWithSuit(String suit) {
     return this._cards.where((card) => card.suit == suit);
+  }
+
+  void displayCards(Iterable<Card> cards) {
+    for (Card card in cards) {
+      print(card.getCard());
+    }
   }
 }

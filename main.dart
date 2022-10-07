@@ -7,16 +7,14 @@ void main(List<String> args) {
 
   //Display New Deck
   print('-----FRESH DECK OF CARDS-----');
-  deck.printCards();
+  deck.printDeck();
 
   //Shuffle and Display
   print('\n-----SHUFFLED DECK OF CARDS-----');
   deck.shuffle();
-  deck.printCards();
+  deck.printDeck();
 
   //Display Cards with Suit 'Hearts'
-  print('\n-----CARDS WITH SUIT OF HEARTS-----');
-  for (Card card in deck.cardsWithSuit('Hearts')) {
-    print('${card.value} of ${card.suit}');
-  }
+  print('\n-----HEARTS-----');
+  deck.displayCards(deck.cardsWithSuit("Hearts"));
 }
